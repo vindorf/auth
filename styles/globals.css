@@ -1,0 +1,14 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+
+body {
+    width: 90%;
+    text-align: center;
+    margin: auto;
+}
+
+
+
