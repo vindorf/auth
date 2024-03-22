@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import MovieCard from "@/components/MovieCard";
+const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
 
 type Movie = {
   Title: string;
@@ -30,8 +31,9 @@ const movies = () => {
 
     try {
       const movie = await axios.get(
-        `https://www.omdbapi.com/?&apikey=debd897d&s=${input}`
-      );
+        `https://www.omdbapi.com/?&apikey=${API_KEY}&s=${input}`
+      )
+      
       setMovies(movie.data.Search);
     } catch (error) {
       console.log(error);
